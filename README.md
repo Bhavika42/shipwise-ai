@@ -1,139 +1,36 @@
-# ShipWise AI
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-ShipWise AI is a full-stack engineering workflow platform built with Next.js, TypeScript, REST APIs, and PostgreSQL. It helps developers manage feature tickets, triage bugs, write daily async updates, generate AI-assisted summaries, and track shipped work from idea to production.
+## Getting Started
 
-## Why I Built This
+First, run the development server:
 
-This project is designed to simulate a real startup engineering workflow where developers take ownership of features end-to-end: clarifying requirements, planning implementation, building frontend and backend functionality, testing, shipping, and monitoring.
-
-The project is especially focused on:
-- Feature ownership
-- Bug triage and root-cause analysis
-- Responsible use of AI suggestions
-- Clear remote communication
-- Full-stack product development
-
-## Features
-
-### Authentication
-- User signup
-- User login
-- Protected dashboard routes
-
-### Dashboard
-- Total feature tickets
-- Open bugs
-- Shipped features
-- Daily updates
-- Activity logs
-- Charts and analytics
-
-### Feature Tickets
-- Create, edit, delete, and view feature tickets
-- Track ticket status from backlog to shipped
-- Add technical plan, test plan, and deployment checklist
-- Generate AI-assisted ticket summaries
-
-### Bug Triage
-- Add bug reports
-- Track severity and status
-- Add reproduction steps
-- Add expected and actual behavior
-- Document root cause and fix summary
-- Add verification steps before closing bugs
-
-### AI Assistant
-- Generate ticket summaries
-- Suggest technical plans
-- Suggest test cases
-- Suggest possible bug root causes
-- Manual verification checkbox for AI outputs
-
-### Daily Updates
-- Write async work updates
-- Add blockers
-- Add next steps
-- Add questions for the team
-
-### Activity Logs
-- Track important user actions
-- Monitor created, updated, and shipped work
-
-## Tech Stack
-
-- Next.js App Router
-- TypeScript
-- React
-- PostgreSQL
-- Prisma
-- NextAuth/Auth.js
-- Zod
-- React Hook Form
-- Recharts
-- CSS Modules / SCSS
-- Vitest or Jest
-- Docker optional
-
-## Planned Pages
-
-- Landing Page
-- Login Page
-- Signup Page
-- Dashboard
-- Feature Tickets
-- Create Ticket
-- Ticket Details
-- Bug Triage
-- Create Bug
-- Bug Details
-- AI Assistant
-- Daily Updates
-- Reports
-- Settings
-
-## API Routes
-
-```txt
-POST   /api/auth/register
-GET    /api/tickets
-POST   /api/tickets
-GET    /api/tickets/:id
-PATCH  /api/tickets/:id
-DELETE /api/tickets/:id
-
-GET    /api/bugs
-POST   /api/bugs
-GET    /api/bugs/:id
-PATCH  /api/bugs/:id
-DELETE /api/bugs/:id
-
-GET    /api/daily-updates
-POST   /api/daily-updates
-
-POST   /api/ai/suggest
-
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
-## Engineering Practices
 
-- Git-based workflow
-- Issue-based development
-- Feature branches
-- REST API validation
-- Protected routes
-- Error handling
-- Loading states
-- Empty states
-- Manual testing
-- Unit/API testing
-- Technical decision documentation
-- Technical Decisions
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Technical decisions will be documented in:
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-docs/technical-decisions.md
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Project Status
-Currently in development.
+## Learn More
 
-## Author
-@Bhavika42
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
