@@ -34,3 +34,59 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## ShipWise AI
+
+This repository contains ShipWise AI, a full-stack Next.js App Router project for managing feature tickets, bug triage, daily updates, AI-assisted suggestions, and reports.
+
+### Local setup
+
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Copy environment variables:
+
+```bash
+cp .env.example .env
+```
+
+3. Start the development server:
+
+```bash
+npm run dev
+```
+
+4. Run tests:
+
+```bash
+npm run test
+```
+
+### Prisma
+
+- Generate the Prisma client:
+
+```bash
+npx prisma generate
+```
+
+- Push the schema to a database:
+
+```bash
+npx prisma db push
+```
+
+### Features
+
+- Landing page with premium dark SaaS UI
+- Dashboard UI with ticket and bug analytics
+- Feature ticket CRUD pages
+- Bug triage workflow and detail views
+- Daily updates module with status reporting
+- AI assistant section with mock suggestions
+- REST API routes under `app/api`
+- Zod validation and React Hook Form integration
+- Prisma schema scaffold for PostgreSQL
+- Vitest validation tests

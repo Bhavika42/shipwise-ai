@@ -1,0 +1,147 @@
+.layout {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 280px minmax(0, 1fr);
+  padding: 2rem clamp(1rem, 3vw, 3rem);
+}
+
+.main {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  margin: 0;
+  color: #8ba8ff;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.8rem;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(2rem, 2.3vw, 2.6rem);
+}
+
+.description {
+  margin: 0.85rem 0 0;
+  color: rgba(255, 255, 255, 0.72);
+  max-width: 680px;
+  line-height: 1.75;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.suggestionCard {
+  border-radius: 24px;
+  background: rgba(11, 16, 33, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.5rem;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.suggestionCard:hover {
+  transform: translateY(-2px);
+  border-color: rgba(111, 108, 255, 0.4);
+}
+
+.active {
+  border-color: #6f6cff;
+}
+
+.suggestionCard h3 {
+  margin: 0;
+}
+
+.suggestionCard p {
+  margin: 0.75rem 0 0;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.8;
+}
+
+.form {
+  display: grid;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-radius: 24px;
+  background: rgba(11, 16, 33, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.form label {
+  color: #d4deff;
+  font-weight: 600;
+}
+
+.form textarea {
+  width: 100%;
+  min-height: 160px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  color: #fff;
+  padding: 1rem;
+  resize: vertical;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.submitButton {
+  border-radius: 999px;
+  padding: 1rem 1.4rem;
+  border: none;
+  background: linear-gradient(135deg, #6f6cff, #00d4ff);
+  color: #fff;
+  font-weight: 700;
+}
+
+.note {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.status {
+  margin: 0;
+  color: #8ba8ff;
+}
+
+.resultCard {
+  border-radius: 24px;
+  background: rgba(11, 16, 33, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.5rem;
+}
+
+.resultCard h2 {
+  margin: 0 0 1rem;
+}
+
+.resultCard p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.8;
+}
+
+@media (max-width: 960px) {
+  .layout,
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

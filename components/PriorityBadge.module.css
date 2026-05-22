@@ -1,0 +1,13 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.low { background: rgba(104, 221, 145, 0.18); color: #c8ffe3; }
+.medium { background: rgba(96, 147, 255, 0.18); color: #d9e3ff; }
+.high { background: rgba(255, 186, 83, 0.18); color: #ffe8b1; }
+.critical { background: rgba(255, 106, 106, 0.18); color: #ffc7c7; }

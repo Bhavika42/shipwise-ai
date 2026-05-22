@@ -1,0 +1,21 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.backlog { background: rgba(92, 97, 255, 0.18); color: #d2d7ff; }
+.inProgress { background: rgba(0, 201, 255, 0.18); color: #a5f0ff; }
+.inReview { background: rgba(111, 122, 255, 0.18); color: #d4dbff; }
+.testing { background: rgba(255, 173, 85, 0.18); color: #ffe6b2; }
+.shipped { background: rgba(70, 213, 156, 0.18); color: #c5ffe3; }
+.open { background: rgba(255, 97, 97, 0.18); color: #ffc4c4; }
+.investigating { background: rgba(255, 189, 72, 0.18); color: #ffe8b3; }
+.fixed { background: rgba(86, 208, 231, 0.18); color: #bff0ff; }
+.verified { background: rgba(104, 223, 117, 0.18); color: #d7ffd5; }
+.closed { background: rgba(168, 172, 255, 0.18); color: #e5e8ff; }
+.default { background: rgba(255, 255, 255, 0.08); color: #fff; }
