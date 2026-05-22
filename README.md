@@ -1,44 +1,21 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+**ShipWise AI**
 
-## Getting Started
+ShipWise AI is a starter full-stack Next.js app (App Router, TypeScript) for managing feature tickets, bug triage, daily updates, and AI-assisted suggestions.
 
-First, run the development server:
+**Quick Links**
+- **Project root:** [package.json](package.json)
+- **App routes:** [app/page.tsx](app/page.tsx)
+- **Prisma schema:** [prisma/schema.prisma](prisma/schema.prisma)
+- **Prisma client wrapper:** [lib/prisma.ts](lib/prisma.ts)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**Stack**
+- Next.js (App Router) + TypeScript
+- React Hook Form + Zod for forms & validation
+- Prisma (PostgreSQL-ready schema)
+- Recharts for data visualization
+- Vitest for unit tests
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-## ShipWise AI
-
-This repository contains ShipWise AI, a full-stack Next.js App Router project for managing feature tickets, bug triage, daily updates, AI-assisted suggestions, and reports.
-
-### Local setup
+**Getting started (local)**
 
 1. Install dependencies:
 
@@ -46,47 +23,80 @@ This repository contains ShipWise AI, a full-stack Next.js App Router project fo
 npm install
 ```
 
-2. Copy environment variables:
+2. Copy environment variables and edit as needed:
 
 ```bash
 cp .env.example .env
+# Edit .env to set DATABASE_URL and NEXTAUTH_SECRET if using auth
 ```
 
-3. Start the development server:
+3. (Optional) Generate Prisma client and push schema to your database:
+
+```bash
+npx prisma generate
+npx prisma db push   # or run migrations if you prefer
+```
+
+4. Run the dev server:
 
 ```bash
 npm run dev
 ```
 
-4. Run tests:
+5. Run tests:
 
 ```bash
 npm run test
 ```
 
-### Prisma
+**Backend / API status**
+- The project includes server-side REST API route handlers under `app/api` (e.g. tickets, bugs, daily-updates).
+- A Prisma schema is included at [prisma/schema.prisma](prisma/schema.prisma). `lib/prisma.ts` provides a runtime-safe wrapper that falls back to a stub if the generated client isn't present — this lets the app build without a configured database for demos.
+- To enable full backend functionality you must set `DATABASE_URL` in `.env`, run `npx prisma generate`, and push/migrate the schema.
 
-- Generate the Prisma client:
+**Deployment**
+- Recommended: Vercel for seamless Next.js deployments. Connect the Git repository and set environment variables (`DATABASE_URL`, `NEXTAUTH_SECRET`, etc.) in the Vercel dashboard.
+- Other hosting: Railway, Render, Fly, Heroku — ensure Node 24+ and the database are available and that you run `prisma generate` during your build.
+
+Example Vercel build step (if needed):
 
 ```bash
-npx prisma generate
+# Build runs automatically on Vercel; ensure a postinstall script runs `npx prisma generate`
 ```
 
-- Push the schema to a database:
+**Screenshots / Diff images**
+- Add screenshots into `public/screenshots/` (create the folder if needed). Example files:
 
-```bash
-npx prisma db push
+```
+public/screenshots/diff-1.png
+public/screenshots/diff-2.png
 ```
 
-### Features
+Insert screenshots in this README where you'd like them to appear. Example markdown:
 
-- Landing page with premium dark SaaS UI
-- Dashboard UI with ticket and bug analytics
-- Feature ticket CRUD pages
-- Bug triage workflow and detail views
-- Daily updates module with status reporting
-- AI assistant section with mock suggestions
-- REST API routes under `app/api`
-- Zod validation and React Hook Form integration
-- Prisma schema scaffold for PostgreSQL
-- Vitest validation tests
+```markdown
+![Diff tab example](/screenshots/diff-1.png)
+```
+
+**Scripts**
+- **dev:** `npm run dev` — starts Next.js in development
+- **build:** `npm run build` — production build
+- **start:** `npm start` — run production server
+- **test:** `npm run test` — runs Vitest
+
+**Testing**
+- Unit tests are in `test/` and use Vitest. Example: `npm run test`.
+
+**Next steps / Notes**
+- If you want, I can:
+	- Add a `public/screenshots` folder and place example placeholders.
+	- Add a `postinstall` script to run `npx prisma generate` during installs.
+	- Prepare a Vercel deployment config with environment variable recommendations.
+- Currently the repository contains the backend scaffolding (API routes + Prisma schema), but the database is not configured by default — run the Prisma commands above to enable it.
+
+**License**
+- See the repository `LICENSE` file.
+
+---
+
+If you want, I can commit a `public/screenshots/.gitkeep` placeholder and add the `postinstall` script now. What would you like me to do next?
