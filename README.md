@@ -55,17 +55,31 @@ npm run test
 - To enable full backend functionality you must set `DATABASE_URL` in `.env`, run `npx prisma generate`, and push/migrate the schema.
 
 **Deployment**
-- Recommended: Vercel for seamless Next.js deployments. Connect the Git repository and set environment variables (`DATABASE_URL`, `NEXTAUTH_SECRET`, etc.) in the Vercel dashboard.
-- Other hosting: Railway, Render, Fly, Heroku — ensure Node 24+ and the database are available and that you run `prisma generate` during your build.
+- Recommended: Vercel for seamless Next.js deployments. Connect the Git repository and set environment variables in the Vercel dashboard.
+- Other hosting: Railway, Render, Fly, Heroku — ensure Node 24+ and the database are available and that Prisma client generation runs during your build.
 
-Example Vercel build step (if needed):
+**Vercel deployment checklist**
+1. Link this repository to Vercel.
+2. Set the following environment variables in the Vercel project settings:
+   - `DATABASE_URL` — PostgreSQL database connection string
+   - `NEXTAUTH_SECRET` — a secure random string for auth/session encryption
+   - `NODE_ENV=production` (optional; Vercel will set this automatically during build)
+3. Confirm the build command is `npm run build`.
+4. Confirm the install command is `npm install`.
+5. Confirm the output directory is left empty (Next.js App Router uses the default output handling).
+6. Verify Prisma client generation by ensuring `postinstall` is present in `package.json`.
+7. Deploy and monitor build logs for `prisma generate` and database connection initialization.
+
+Example Vercel build step:
 
 ```bash
-# Build runs automatically on Vercel; ensure a postinstall script runs `npx prisma generate`
+# Vercel will run `npm install` during build, and this project includes a postinstall hook to generate Prisma client types.
 ```
 
 **Screenshots / Diff images**
-- Add screenshots into `public/screenshots/` (create the folder if needed). Example files:
+- Add screenshots into `public/screenshots/`.
+- A placeholder is already included at `public/screenshots/.gitkeep` if you want to keep the folder in Git.
+- Example files:
 
 ```
 public/screenshots/diff-1.png
