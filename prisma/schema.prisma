@@ -1,0 +1,109 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Priority {
+  Low
+  Medium
+  High
+  Critical
+}
+
+enum TicketStatus {
+  Backlog
+  InProgress
+  InReview
+  Testing
+  Shipped
+}
+
+enum Severity {
+  Low
+  Medium
+  High
+  Critical
+}
+
+enum BugStatus {
+  Open
+  Investigating
+  Fixed
+  Verified
+  Closed
+}
+
+model User {
+  id        String       @id @default(cuid())
+  name      String?
+  email     String       @unique
+  password  String
+  tickets   Ticket[]
+  bugs      Bug[]
+  updates   DailyUpdate[]
+  createdAt DateTime     @default(now())
+  updatedAt DateTime     @updatedAt
+}
+
+model Ticket {
+  id                  String       @id @default(cuid())
+  title               String
+  description         String
+  requirements        String?
+  priority            Priority     @default(Medium)
+  status              TicketStatus @default(Backlog)
+  technicalPlan       String?
+  testPlan            String?
+  deploymentChecklist String?
+  aiSummary           String?
+  aiVerified          Boolean      @default(false)
+  userId              String?
+  user                User?        @relation(fields: [userId], references: [id])
+  createdAt           DateTime     @default(now())
+  updatedAt           DateTime     @updatedAt
+}
+
+model Bug {
+  id                String    @id @default(cuid())
+  title             String
+  description       String
+  stepsToReproduce  String
+  expectedBehavior  String
+  actualBehavior    String
+  severity          Severity  @default(Medium)
+  rootCause         String?
+  fixSummary        String?
+  verificationSteps String?
+  status            BugStatus @default(Open)
+  aiRootCause       String?
+  aiVerified        Boolean   @default(false)
+  userId            String?
+  user              User?     @relation(fields: [userId], references: [id])
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+}
+
+model DailyUpdate {
+  id                String    @id @default(cuid())
+  whatIWorkedOn     String
+  blockers          String?
+  nextSteps         String
+  questionsForTeam  String?
+  userId            String?
+  user              User?     @relation(fields: [userId], references: [id])
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+}
+
+model ActivityLog {
+  id        String   @id @default(cuid())
+  entity    String
+  entityId  String
+  action    String
+  message   String
+  createdAt DateTime @default(now())
+}

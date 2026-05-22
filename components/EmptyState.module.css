@@ -1,0 +1,30 @@
+.emptyState {
+  border-radius: 24px;
+  padding: 2rem;
+  background: rgba(11, 16, 33, 0.95);
+  border: 1px dashed rgba(255, 255, 255, 0.14);
+  text-align: center;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.description {
+  margin: 1rem auto 0;
+  max-width: 380px;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.75;
+}
+
+.action {
+  display: inline-flex;
+  margin-top: 1.5rem;
+  padding: 0.9rem 1.5rem;
+  border-radius: 999px;
+  color: #fff;
+  background: linear-gradient(135deg, #6f6cff, #00d4ff);
+  text-decoration: none;
+}

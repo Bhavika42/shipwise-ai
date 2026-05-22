@@ -1,0 +1,83 @@
+.layout {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 280px minmax(0, 1fr);
+  padding: 2rem clamp(1rem, 3vw, 3rem);
+}
+
+.main {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  margin: 0;
+  color: #8ba8ff;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.8rem;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(2rem, 2.3vw, 2.6rem);
+}
+
+.description {
+  margin: 0.85rem 0 0;
+  color: rgba(255, 255, 255, 0.72);
+  max-width: 680px;
+  line-height: 1.75;
+}
+
+.card {
+  border-radius: 24px;
+  padding: 1.5rem;
+  background: rgba(11, 16, 33, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: grid;
+  gap: 1rem;
+}
+
+.card h2 {
+  margin: 0;
+}
+
+.row {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.row label,
+.row span {
+  color: rgba(255, 255, 255, 0.72);
+  font-weight: 600;
+}
+
+.row input,
+.row select {
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: #fff;
+  padding: 0.95rem 1rem;
+}
+
+.note {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.66);
+  line-height: 1.75;
+}
+
+@media (max-width: 960px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}

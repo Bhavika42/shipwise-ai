@@ -1,0 +1,124 @@
+.dashboard {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 280px minmax(0, 1fr);
+  padding: 2rem clamp(1rem, 3vw, 3rem);
+}
+
+.main {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.subtitle {
+  color: #8ba8ff;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(2.2rem, 2.6vw, 3rem);
+}
+
+.description {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.8;
+}
+
+.statsGrid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.chartGrid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.activityRow {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1.2fr 0.8fr;
+}
+
+.activityCard,
+.cardGroup {
+  border-radius: 28px;
+  padding: 1.5rem;
+  background: rgba(11, 16, 33, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.cardHeader h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.cardHeader p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.activityList {
+  display: grid;
+  gap: 1rem;
+}
+
+.activityItem {
+  padding: 1rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.activityItem span {
+  display: inline-flex;
+  color: #8ba8ff;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.activityItem p {
+  margin: 0.5rem 0 0;
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.activityItem small {
+  display: block;
+  margin-top: 0.75rem;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.cardList {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (max-width: 960px) {
+  .dashboard,
+  .activityRow,
+  .chartGrid,
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+}
